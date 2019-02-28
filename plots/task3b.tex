@@ -1,0 +1,28 @@
+\input{pre/pregrapics}
+\pgfplotsset{width=15cm,height=10cm,compat=newest}
+\begin{document}
+\begin{tikzpicture}[
+]
+	\begin{axis}[
+	table/col sep = semicolon,
+	xlabel={$U_\text{рез}$, В},
+	ylabel={$I$, мА},
+	minor y tick num=2,
+	minor x tick num=4,
+	grid=both,
+	grid style={line width=.3pt, draw=gray!40},
+	major grid style={line width=.2pt,draw=black!40},
+	legend pos=north west,
+]
+	\pgfplotstableread{task3b(1).csv}\exp;
+	\addplot[red,smooth,line width=1pt, mark=*,mark size=1.5pt] table [x expr = \thisrowno{0},y expr = \thisrowno{1}] {\exp};
+
+	\pgfplotstableread{task3b(2).csv}\expp;
+	\addplot[green,smooth,line width=1pt,mark=*,mark size=1.5pt] table [x expr = \thisrowno{0},y expr = \thisrowno{1}] {\expp};
+
+	\pgfplotstableread{task3b(3).csv}\exppp;
+	\addplot[blue,smooth,line width=1pt,mark=*,mark size=1.5pt,label=10 mm] table [x expr = \thisrowno{0},y expr = \thisrowno{1}] {\exppp};
+	\legend{$U_\text{отр}=21\text{ В}$, $U_\text{отр}=48\text{ В}$, $U_\text{отр}=56\text{ В}$}
+	\end{axis}
+\end{tikzpicture}
+\end{document}
