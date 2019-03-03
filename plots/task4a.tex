@@ -22,7 +22,7 @@
 	\addplot[green,only marks, mark=square*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\expp};
 
 	\pgfplotstableread{task3a(3).csv}\exppp;
-	\addplot[blue,only marks, mark=triangle*, mark size=3pt,label=10 mm] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\exppp};
+	\addplot[blue,only marks, mark=triangle*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\exppp};
 	\legend{$U_\text{рез}=90\text{ В}$, $U_\text{рез}=102\text{ В}$, $U_\text{рез}=114\text{ В}$}
 	\end{axis}
 \end{tikzpicture}

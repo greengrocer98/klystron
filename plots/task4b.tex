@@ -16,13 +16,13 @@
 	legend pos=south east,
 ]
 	\pgfplotstableread{task3b(1).csv}\exp;
-	\addplot[red,only marks, mark=*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\exp};
+	\addplot[red, mark=*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\exp};
 
 	\pgfplotstableread{task3b(2).csv}\expp;
-	\addplot[green,only marks, mark=square*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\expp};
+	\addplot[green, mark=square*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\expp};
 
 	\pgfplotstableread{task3b(3).csv}\exppp;
-	\addplot[blue,only marks, mark=triangle*, mark size=3pt,label=10 mm] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\exppp};
+	\addplot[blue, mark=triangle*, mark size=3pt] table [x expr = \thisrowno{0},y expr = \thisrowno{2}] {\exppp};
 	\legend{$U_\text{отр}=21\text{ В}$, $U_\text{отр}=48\text{ В}$, $U_\text{отр}=56\text{ В}$}
 	\end{axis}
 \end{tikzpicture}
